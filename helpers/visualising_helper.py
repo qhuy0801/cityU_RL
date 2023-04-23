@@ -60,3 +60,15 @@ def display_(sequences) -> None:
 def display_atari(img):
     plt.imshow(img.astype(int))
     plt.show()
+
+def plot_training_pong(data):
+    fig = plt.figure(1)
+    ax1 = fig.add_subplot(111)
+    ax1.set_xlabel('Frame')
+    ax1.set_ylabel('Score')
+    ax1.plot(data['score'], color='C1', label='score')
+    ax2 = ax1.twinx()
+    ax2.set_ylabel('Epsilon')
+    ax2.plot(data['epsilon'], color='C3', label='epsilon')
+    fig.legend()
+    plt.show()

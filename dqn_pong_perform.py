@@ -7,6 +7,7 @@ import matplotlib.pyplot as plt
 
 from algo.dqn_pygame_pong import agent
 from envs import pong_env
+from helpers.visualising_helper import plot_training_pong
 
 # environment definition
 ACTION_COUNT = 3 # go up, down or stay
@@ -102,19 +103,7 @@ def perform():
         'epsilon': epsilon_history
     }
 
-    plot_training(pd.DataFrame(history_dict))
-
-def plot_training(data):
-    fig = plt.figure(1)
-    ax1 = fig.add_subplot(111)
-    ax1.set_xlabel('Frame')
-    ax1.set_ylabel('Score')
-    ax1.plot(data['score'], color='C1', label='score')
-    ax2 = ax1.twinx()
-    ax2.set_ylabel('Epsilon')
-    ax2.plot(data['epsilon'], color='C3', label='epsilon')
-    fig.legend()
-    plt.show()
+    plot_training_pong(pd.DataFrame(history_dict))
 
 if __name__ == "__main__":
     perform()
