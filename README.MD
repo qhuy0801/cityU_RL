@@ -51,18 +51,24 @@ We've got three sub-projects in the repo, labelled 1, 2, and 3 (as we mentioned 
 
 ```
 
-
+# Installation
+First, we need to create a virtual environment and run as requirement specified
 ```
 pip install -r /path/to/requirements.txt
 ```
-
+This project uses both gym and gymnasium libraries. gym is originally from OpenAI and gymnasium is a fork that has been transferred to Farama Foundation.
+Therefore, we need to install both of them.
 ```
 pip install "gym[atari]"
 pip install "gym[accept-rom-license]"
 pip install gymnasium
 pip install shimmy
 ```
+Please notice that Atari is now not in `gymnasium[atari]` distribution before, so sometimes, 
+even if we use `pip install "gymnasium[atari]"` it won't install the environment into our `gymnasium`,
+just `gym` only, in this case, make sure to install `shimmy` to get the environment compatibility .
 
+To load tensorboard for visualisation
 ```
 %load_ext tensorboard
 %tensorboard --logdir logs/path
