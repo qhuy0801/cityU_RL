@@ -28,7 +28,7 @@ We've got three sub-projects in the repo, labelled 1, 2, and 3 (as we mentioned 
 ├── envs
 │   ├── cab_env.py (1)
 │   ├── cab_env_v2 (*)
-│   └── pong_env.py
+│   └── pong_env.py (2)
 │
 ├── helpers
 │   ├── performing_helper.py
